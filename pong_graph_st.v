@@ -33,7 +33,8 @@ module pong_graph_st
    //--------------------------------------------
    // wall
    //--------------------------------------------
-   assign wall_on = pix_x < 16 || pix_y < 16 || pix_y >= MAX_Y-16;
+	localparam WALL_SIZE = 16;
+   assign wall_on = pix_x < WALL_SIZE || pix_y < WALL_SIZE || pix_y >= MAX_Y-WALL_SIZE;
    // wall rgb output
    assign wall_rgb = 3'b001; // blue
    //--------------------------------------------
